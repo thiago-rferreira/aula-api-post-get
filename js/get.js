@@ -3,7 +3,7 @@ const lista = document.querySelector("#lista-herois");
 const modelo = document.querySelector("#modelo-heroi");
 
 
-const apiKey = "cv_B7G4lkJtwNASau0AyETLet1R9aRLbVt1eR8eMcbgU_Y3IcB2iN_452sL8uKw5llX";
+const apiKey = "cv_9MfBXKd0jeOgXY4rPOTHZkp9XTC6aitYrMN0gYazyBZKP0pfI07djQQQAH7uH8ZK";
 
 const apiUrl = "https://api-ds.codeverse.dev.br/api/herois";
 
@@ -18,7 +18,7 @@ async function buscarHerois() {
       method: "GET",
       headers: {"x-api-key" : apiKey},
     });
-    
+
     //Verificar se não deu certo
     if(!retorno.ok){
       throw new Error("Não foi possível carregar os heróis.");
@@ -26,7 +26,7 @@ async function buscarHerois() {
 
     // Converter o resultado para JSON, pois será um objeto.
     const resultado = await retorno.json();
-
+    
     //Percorrer todos os herois que esta dentro de resultado.
     for (const heroi of resultado.data){
       
@@ -61,7 +61,7 @@ async function buscarHerois() {
 
   } catch (error) {
     console.error(error);
-    resposta.textContent= "Não foi possível carregar os heróis. Tente novamente!" 
+    resposta.textContent= "Não foi possível carregar os heróis. Tente novamente!";
   }
 }
 
